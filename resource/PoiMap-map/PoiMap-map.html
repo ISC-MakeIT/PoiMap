@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA2yZPxGN5LJU3WVUs6cLwwTf32Fd6CJvE&language=ja"></script>
+    <link href="../reset-stylesheet.css" rel="stylesheet" />
+    <link href="PoiMap-map.css" rel="stylesheet" />
+    <link href="PoiMap-garbageDetail.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <title>poiMap</title>
+  </head>
+  <body>
+    <div id="topBar">
+      <div id="return">
+        <i class="fas fa-angle-left"></i>
+      </div>
+      <p id="current-location">現在位置</p>
+      <div id="temporary-button">
+        仮<!--場所詳細ページを表示する仮ボタン-->
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="filter"></div>
+    <div id="filter-content">
+      <div class="category">
+        <p class="category-text">燃えるゴミ</p>
+        <div class="burnable-icon"></div>
+      </div>
+      <div class="category">
+        <p class="category-text">燃えないゴミ</p>
+        <div class="notburnable-icon"></div>
+      </div>
+      <div class="category">
+        <p class="category-text">ペットボトル</p>
+        <div class="petBottle-icon"></div>
+      </div>
+      <div class="category">
+        <p class="category-text">缶・ビン</p>
+        <div class="aluminumGlass-icon"></div>
+      </div>
+      <div class="category" id="filter-close">
+        <p class="category-text">閉じる</p>
+        <div id="cross-icon"></div>
+      </div>
+    </div>
+    <div id="informaion">
+      <div id="top-menu">
+        <div id="garbage-img"></div>
+        <div id="garbage-whereName">JR横浜駅構内</div>
+        <div id="garbage-close"></div>
+        <div id="prediction-time"></div>
+        <div id="garbage-icons">
+          <div class="burnable-icon"></div>
+          <div class="notburnable-icon"></div>
+          <div class="petBottle-icon"></div>
+          <div class="aluminumGlass-icon"></div>
+        </div>
+        <div id="info-start"></div>
+      </div>
+      <div id="comment">
+        <div id="users-icon"></div>
+        <div id="comment-text"></div>
+        <div id="comment-time"></div>
+      </div>
+      <div id="add-comment"></div>
+    </div>
+    <script src="PoiMap-map.js"></script>
+  </body>
+</html>

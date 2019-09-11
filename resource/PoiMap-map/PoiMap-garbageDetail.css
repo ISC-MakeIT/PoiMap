@@ -1,0 +1,45 @@
+#informaion {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 92%;
+  background-color: #F8F8F8;
+  clip-path: circle(0px at 50% 100%);
+  transition: all 0.7s ease;
+}
+
+#informaion.open {
+  clip-path: circle(1000px at 50% 100%);
+  transition: all 0.7s ease;
+}
+
+#temporary-button {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #F8F8F8;;
+  color: black;
+}
+
+#top-menu {
+  position: fixed;
+  top: 8%;
+  width: 100%;
+  height: 20vh;
+}
+
+#garbage-img {
+  width: 28.5%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: teal;
+  margin: 10px 0 0 3px;
+}
+
+#garbage-whereName {
+  position: absolute;
+  top: 17%;
+  left: 30%;
+  font-size: 170%;
+}

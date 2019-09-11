@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#topBar {
+  width: 100%;
+  height: 8vh;
+  background-color: #0271B4;
+  margin: 0;
+  text-align: center;
+  font-size: 150%;
+  color: #F8F8F8;;
+}
+
+#return {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 50px;
+  height: 45px;
+  font-size: 50px;
+}
+
+#current-location {
+  position: absolute;
+  top: 18px;
+  left: 35vw;
+  margin: 0 auto;
+  width: 30%;
+}
+
+#map {
+  width: 100%;
+  height: 92vh;
+}
+
+#filter {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0;
+  background-color: #0271B4;
+  transition: all 1s ease;
+}
+
+#filter-content {
+  position: fixed;
+  bottom: 15px;
+  right: 0;
+  background-color: rgba(225, 225, 225, 90%);
+  width: 70vw;
+  height: 60vh;
+  border-radius: 50px 0 0 50px;
+  margin: 0;
+  text-align: right;
+  clip-path: circle(0px at 84.7% 92.5%);
+  /*-webkit-clip-path: circle(10px at 90% 100%);*/
+  transition: all 1s ease;
+}
+
+#filter-content.open {
+  clip-path: circle(1000px at 84.7% 92.5%);
+  -webkit-clip-path: circle(1000px at 84.7% 92.5%);
+}
+
+.category {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: calc(100% / 5);
+  margin: 0;
+}
+
+.category div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.category-text {
+  width: 120px;
+  margin: 0;
+}
+
+.burnable-icon {
+  background-color: red;
+}
+
+.notburnable-icon {
+  background-color: blue;
+}
+
+.petBottle-icon {
+  background-color: aqua;
+}
+
+.aluminumGlass-icon {
+  background-color: orange;
+}
+
+#cross-icon {
+  background-color: #404040;
+}
