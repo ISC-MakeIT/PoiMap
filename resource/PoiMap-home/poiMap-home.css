@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(#0275b9, #024066);
+  background-color: #0271B4;
   color: #F8F8F8;;
   height: 100%;
   margin: 0;
@@ -105,3 +105,16 @@ body {
   width: 100%;
   height: 40%;
 }
+
+#deital {
+  width: 100%;
+  height: 1000px;
+  background-color: #F8F8F8;
+}
+
+#detail-div {
+  height: 1000px;
+  background: #F8F8F8;
+  z-index: -1;
+}
+
