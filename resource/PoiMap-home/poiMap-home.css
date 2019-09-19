@@ -1,0 +1,146 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #0271b4;
+  color: #f8f8f8;
+  height: 100%;
+  margin: 0;
+}
+
+#page-top {
+  width: 100%;
+  height: 30vh;
+  background-color: #f8f8f8;
+  color: #404040;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+#sub-title-one {
+  font-size: 145%;
+  margin: 80px 0 35px 0;
+}
+
+#title {
+  width: 95%;
+  height: 15vh;
+  background-color: red;
+  margin: 0 auto;
+}
+
+#mainMenu {
+  display: flex;
+  justify-content: space-around;
+  width: 94vw;
+  height: 20vh;
+  margin: 10px auto;
+}
+
+#whereSearch {
+  width: 45%;
+  height: 100%;
+  background-color: green;
+}
+
+#manual {
+  width: 45%;
+  height: 100%;
+  background-color: blue;
+}
+
+#search {
+  display: flex;
+  width: 90vw;
+  height: 7vh;
+  background-color: #f8f8f8;
+  margin: 10px auto;
+}
+
+#magnifier {
+  width: 13%;
+  height: 90%;
+  margin: 1%;
+  background-color: chartreuse;
+}
+
+#whereSearch-inputText {
+  width: 87%;
+  font-size: 130%;
+  background-color: #f8f8f8;
+  border: none;
+}
+
+#countryBox {
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  height: 20vh;
+  margin: 10px;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 127px;
+  text-align: center;
+}
+
+#jp-flg {
+  width: 100%;
+  height: 40%;
+}
+
+#us-flg {
+  width: 100%;
+  height: 40%;
+}
+
+#ch-flg {
+  width: 100%;
+  height: 40%;
+}
+
+#kr-flg {
+  width: 100%;
+  height: 40%;
+}
+
+#deital {
+  width: 100%;
+  height: 1000px;
+  background-color: #f8f8f8;
+}
+
+#detail-div {
+  width: 100vw;
+  height: 1000px;
+  background: #f8f8f8;
+  margin: 0;
+  z-index: -1;
+}
+
+#add-div {
+  position: absolute;
+  top: 135vh;
+  left: -113px;
+  width: 200px;
+  border-bottom: 127vw solid #0271b4;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  height: 0;
+  margin: 0 auto;
+  color: #666;
+  transform: rotate(90deg);
+  z-index: 0;
+}
+
+#search-detail-box,
+#add-detail-box,
+#reviews-detail-box {
+  background-color: orange;
+  width: 100%;
+  height: 500px;
+  z-index: 1;
+  margin: 0;
+}
