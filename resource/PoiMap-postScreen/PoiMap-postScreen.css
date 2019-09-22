@@ -259,7 +259,6 @@
 /* エラーメッセージ */
 #uploadImageError,
 #placeNameError,
-#trashBoxTypeError,
-#reviewFormError {
+#trashBoxTypeError {
   color: #ea4335;
 }
