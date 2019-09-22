@@ -1,0 +1,265 @@
+/*--------
+  ×ボタン
+--------*/
+#closeButton {
+  background: url(../../icon/cross-icon.svg) no-repeat center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 17.5px;
+  right: 23px;
+}
+
+/*----------
+  写真選択
+----------*/
+#preview {
+  background: url(../../icon/plusIcon.svg) no-repeat center;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  border: solid 1px #707070;
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 3px;
+}
+
+#uploadImage {
+  opacity: 0;
+}
+
+#uploadImageError {
+  position: absolute;
+  top: 140px;
+  left: 3px;
+}
+
+/*-----------
+  場所の名称
+-----------*/
+#placeName {
+  width: 218px;
+  height: 38px;
+  border-radius: 5px;
+  border: solid 1px #707070;
+  position: absolute;
+  top: 53px;
+  right: 18px;
+  font: 16px 'ヒラギノ丸ゴ ProN,W4';
+}
+
+#placeNameError {
+  position: absolute;
+  top: 100px;
+  left: 140px;
+}
+
+/*-------------
+  ごみ箱の種類
+-------------*/
+#trashBoxType {
+  position: absolute;
+  top: 160px;
+  left: 17px;
+  font: 16px 'ヒラギノ丸ゴ ProN,W4';
+}
+
+#trashBoxTypeContainer {
+  width: 375px;
+  height: 64px;
+  display: flex;
+  position: relative;
+  top: 17.75px;
+}
+
+.category {
+  opacity: 0;
+}
+
+.categoryContainer {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  margin-right: auto;
+}
+
+/*petBottle*/
+.nonSelectPetBottle-icon {
+  background-color: #c5cdd1;
+  -webkit-mask: no-repeat center / 80% url(../../icon/plasticBottle.svg);
+}
+
+.selectPetBottle-icon {
+  background-color: #0272b6;
+  -webkit-mask: no-repeat center / 80% url(../../icon/plasticBottle.svg);
+}
+
+#petBottle-iconBorder {
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  border: #c5cdd1 1px solid; /*select*/
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/*nonburnable*/
+.nonSelectNonBurnable-icon {
+  background-color: #c5cdd1;
+  -webkit-mask: no-repeat center / 70% url(../../icon/cross-icon.svg);
+  position: relative;
+  top: 1.5px;
+  left: 0.75px;
+}
+
+.selectNonBurnable-icon {
+  background-color: #0272b6;
+  -webkit-mask: no-repeat center / 70% url(../../icon/cross-icon.svg);
+  position: relative;
+  top: 1.5px;
+  left: 0.75px;
+}
+
+.nonSelectNonBurnableIcon {
+  width: 62px;
+  height: 62px;
+  background-color: white;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+  position: absolute;
+  left: 93.75px;
+  z-index: -1;
+}
+
+.selectNonBurnableIcon {
+  width: 62px;
+  height: 62px;
+  background-color: #0272b6;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+  position: absolute;
+  left: 93.75px;
+  z-index: -1;
+}
+
+#nonBurnable-iconBorder {
+  width: 62px;
+  height: 62px;
+  background-color: #c5cdd1; /*select*/
+  position: absolute;
+  left: 93.75px;
+  border: #c5cdd1 1px solid; /*select*/
+  border-radius: 50%;
+  z-index: -2;
+}
+
+/*burnable*/
+.nonSelectBurnable-icon {
+  background-color: #c5cdd1;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+}
+
+.selectBurnable-icon {
+  background-color: #0272b6;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+}
+
+#burnable-iconBorder {
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  left: 187.5px;
+  border: #c5cdd1 1px solid; /*select*/
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/*aluminumGlass*/
+.nonSelectAluminumGlass-icon {
+  background-color: #c5cdd1;
+  -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
+}
+
+.selectAluminumGlass-icon {
+  background-color: #0272b6;
+  -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
+}
+
+#aluminumGlass-iconBorder {
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  left: 281.25px;
+  border: #c5cdd1 1px solid; /*select*/
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#trashBoxTypeError {
+  position: absolute;
+  top: 20px;
+}
+
+/*--------
+  口コミ
+--------*/
+#reviewForm {
+  position: absolute;
+  top: 274px;
+  left: 17px;
+  font: 16px 'ヒラギノ丸ゴ ProN,W4';
+}
+
+#reviews {
+  width: 338px;
+  height: 177px;
+  border: solid 1px #707070;
+  position: relative;
+  top: 18px;
+  font: 16px 'ヒラギノ丸ゴ ProN,W4';
+}
+
+#reviewFormError {
+  position: absolute;
+  top: 20px;
+}
+
+/*--------------
+  送信/リセット
+--------------*/
+#sendForm {
+  position: absolute;
+  width: 375px;
+  top: 517px;
+}
+
+#sendForm p {
+  position: relative;
+  left: 25%;
+}
+
+.sendButton {
+  background: white;
+  width: 105px;
+  height: 32px;
+  border-radius: 5px;
+  position: relative;
+  top: 12px;
+}
+
+#submitForm {
+  border: solid 1px #0271b4;
+  left: 50px;
+}
+
+#resetForm {
+  border: solid 1px #ea4335;
+  left: 109px;
+}
+
+/* エラーメッセージ */
+#uploadImageError,
+#placeNameError,
+#trashBoxTypeError,
+#reviewFormError {
+  color: #ea4335;
+}
