@@ -1,3 +1,6 @@
+/*----------
+  写真選択
+----------*/
 // 写真選択時にプレビューを表示
 document.getElementById('uploadImage').onchange = function() {
   const reader = new FileReader();
@@ -6,83 +9,81 @@ document.getElementById('uploadImage').onchange = function() {
       'background',
       `url(${reader.result}) no-repeat center / cover`
     );
+    //エラーが表示されていたら消す
+    if ($('#uploadImageError').text() == '*写真を選択してください') {
+      $('#uploadImageError').text('');
+    }
   };
   reader.readAsDataURL(this.files[0]);
 };
 
+/*-----------------
+  ゴミ箱の種類選択
+-----------------*/
 // ゴミ箱の種類タッチしたらsvgの色を変更
-$('#petBottle').click(function() {
-  const result = $('#petBottle-icon').hasClass('nonSelectPetBottle-icon');
-  if (result) {
-    // 選択
-    $('#petBottle-icon').removeClass('nonSelectPetBottle-icon');
-    $('#petBottle-icon').addClass('selectPetBottle-icon');
-    $('#petBottle-iconBorder').css('border', '#0272B6 1px solid');
-  } else {
-    //　非選択
-    $('#petBottle-icon').removeClass('selectPetBottle-icon');
-    $('#petBottle-icon').addClass('nonSelectPetBottle-icon');
-    $('#petBottle-iconBorder').css('border', '#c5cdd1 1px solid');
+$('.category').on('click', function() {
+  const thisId = this.id;
+  if (this.id == 'petBottle') {
+    const capitalLetter = 'PetBottle';
+    changeSVG(thisId, capitalLetter);
+  } else if (this.id == 'burnable') {
+    const capitalLetter = 'Burnable';
+    changeSVG(thisId, capitalLetter);
+  } else if (this.id == 'nonburnable') {
+    const capitalLetter = 'NonBurnable';
+    changeSVG(thisId, capitalLetter);
+  } else if (this.id == 'aluminumGlass') {
+    const capitalLetter = 'AluminumGlass';
+    changeSVG(thisId, capitalLetter);
   }
 });
 
-$('#burnable').click(function() {
-  const result = $('#burnable-icon').hasClass('nonSelectBurnable-icon');
-  if (result) {
-    // 選択
-    $('#burnable-icon').removeClass('nonSelectBurnable-icon');
-    $('#burnable-icon').addClass('selectBurnable-icon');
-    $('#burnable-iconBorder').css('border', '#0272B6 1px solid');
-  } else {
-    //　非選択
-    $('#burnable-icon').removeClass('selectBurnable-icon');
-    $('#burnable-icon').addClass('nonSelectBurnable-icon');
-    $('#burnable-iconBorder').css('border', '#c5cdd1 1px solid');
-  }
-});
-
-$('#aluminumGlass').click(function() {
-  const result = $('#aluminumGlass-icon').hasClass(
-    'nonSelectAluminumGlass-icon'
+const changeSVG = (thisId, capitalLetter) => {
+  const hasNonSelectClass = $(`#${thisId}-icon`).hasClass(
+    `nonSelect${capitalLetter}-icon`
   );
-  if (result) {
-    // 選択
-    $('#aluminumGlass-icon').removeClass('nonSelectAluminumGlass-icon');
-    $('#aluminumGlass-icon').addClass('selectAluminumGlass-icon');
-    $('#aluminumGlass-iconBorder').css('border', '#0272B6 1px solid');
+  if (hasNonSelectClass) {
+    $(`#${thisId}-icon`).removeClass(`nonSelect${capitalLetter}-icon`);
+    $(`#${thisId}-icon`).addClass(`select${capitalLetter}-icon`);
+    if (thisId == 'nonburnable') {
+      $(`#nonSelect${capitalLetter}Icon`).removeClass(
+        `nonSelect${capitalLetter}Icon`
+      );
+      $(`#nonSelect${capitalLetter}Icon`).addClass(
+        `select${capitalLetter}Icon`
+      );
+      console.log(thisId);
+      $(`#${thisId}-iconBorder`).css({
+        'background-color': 'white',
+        border: '#0272B6 1px solid'
+      });
+    } else {
+      $(`#${thisId}-iconBorder`).css('border', '#0272B6 1px solid');
+    }
   } else {
-    //　非選択
-    $('#aluminumGlass-icon').removeClass('selectAluminumGlass-icon');
-    $('#aluminumGlass-icon').addClass('nonSelectAluminumGlass-icon');
-    $('#aluminumGlass-iconBorder').css('border', '#c5cdd1 1px solid');
-  }
-});
+    $(`#${thisId}-icon`).removeClass(`select${capitalLetter}-icon`);
+    $(`#${thisId}-icon`).addClass(`nonSelect${capitalLetter}-icon`);
 
-$('#nonburnable').click(function() {
-  const result = $('#nonburnable-icon').hasClass('nonSelectNonBurnable-icon');
-  if (result) {
-    // 選択
-    $('#nonburnable-icon').removeClass('nonSelectNonBurnable-icon');
-    $('#nonburnable-icon').addClass('selectNonBurnable-icon');
-    $('#nonSelectNonBurnableIcon').removeClass('nonSelectNonBurnableIcon');
-    $('#nonSelectNonBurnableIcon').addClass('selectNonBurnableIcon');
-    $('#nonBurnable-iconBorder').css({
-      'background-color': 'white',
-      border: '#0272B6 1px solid'
-    });
-  } else {
-    //　非選択
-    $('#nonburnable-icon').removeClass('selectNonBurnable-icon');
-    $('#nonburnable-icon').addClass('nonSelectNonBurnable-icon');
-    $('#nonSelectNonBurnableIcon').removeClass('selectNonBurnableIcon');
-    $('#nonSelectNonBurnableIcon').addClass('nonSelectNonBurnableIcon');
-    $('#nonBurnable-iconBorder').css({
-      'background-color': '#c5cdd1',
-      border: '#c5cdd1 1px solid'
-    });
+    if (thisId == 'nonburnable') {
+      $(`#nonSelect${capitalLetter}Icon`).removeClass(
+        `select${capitalLetter}Icon`
+      );
+      $(`#nonSelect${capitalLetter}Icon`).addClass(
+        `nonSelect${capitalLetter}Icon`
+      );
+      $(`#${thisId}-iconBorder`).css({
+        'background-color': '#c5cdd1',
+        border: '#c5cdd1 1px solid'
+      });
+    } else {
+      $(`#${thisId}-iconBorder`).css('border', '#c5cdd1 1px solid');
+    }
   }
-});
+};
 
+/*-------------
+  入力チェック
+-------------*/
 // 記入or選択しないとエラーを表示(required)
 $('form').validate({
   rules: {
