@@ -49,6 +49,10 @@
   font: 16px 'ヒラギノ丸ゴ ProN,W4';
 }
 
+#placeName::placeholder {
+  padding: 0 0 0 5px;
+}
+
 #placeNameError {
   position: absolute;
   top: 100px;
@@ -216,6 +220,10 @@
   position: relative;
   top: 18px;
   font: 16px 'ヒラギノ丸ゴ ProN,W4';
+}
+
+#reviews::placeholder {
+  padding: 0 0 0 5px;
 }
 
 #reviewFormError {
