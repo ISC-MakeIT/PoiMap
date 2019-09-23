@@ -27,7 +27,7 @@
   position: absolute;
   top: 18px;
   left: 35vw;
-  margin: 0 auto;
+  margin: auto 0 auto 0;
   width: 30%;
 }
 
@@ -52,7 +52,7 @@
   position: fixed;
   bottom: 15px;
   right: 0;
-  background-color: rgba(225, 225, 225, 90%);
+  background-color: #F8F8F8;
   width: 70vw;
   height: 60vh;
   border-radius: 50px 0 0 50px;
@@ -88,27 +88,26 @@
   margin: 0;
 }
 
-.burnable-icon {
-  background-color: red;
-}
-
-.notburnable-icon {
-  background-color: blue;
-}
-
-.petBottle-icon {
-  background-color: aqua;
-}
-
-.aluminumGlass-icon {
-  background-color: orange;
-}
-
-#cross-icon {
+.burnable-icon,.nonBurnable-icon,.petBottle-icon,.aluminumGlass-icon,#cross-icon {
+  width: 50px;
+  height: 50px;
   border: 1px #0271B4 solid;
   background-color: #F8F8F8;
   color: #0271B4;
-  padding: 14px;
   text-align: center;
 }
-y
+
+.burnable-icon {
+}
+
+.nonBurnable-icon {
+}
+
+.petBottle-icon {
+}
+
+.aluminumGlass-icon {
+}
+
+#cross-icon {
+}

@@ -5,12 +5,12 @@
   height: 92%;
   background-color: #F8F8F8;
   clip-path: circle(0px at 50% 100%);
-  transition: all 0.7s ease;
+  transition: all 5s ease;
 }
 
 #informaion.open {
-  clip-path: circle(1000px at 50% 100%);
-  transition: all 0.7s ease;
+  clip-path: circle(10000px at 50% 100%);
+  transition: all 5s ease;
 }
 
 #temporary-button {
@@ -24,22 +24,97 @@
 
 #top-menu {
   position: fixed;
+  display: flex;
+  flex-direction: row;
   top: 8%;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
 }
 
 #garbage-img {
-  width: 28.5%;
-  height: 80%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background-color: teal;
   margin: 10px 0 0 3px;
 }
 
+#top-right-div {
+  width: 68%;;
+}
+
 #garbage-whereName {
-  position: absolute;
-  top: 17%;
-  left: 30%;
   font-size: 170%;
+  margin: 13px 0 13px 0;
+}
+
+#prediction-time {
+  font-size: 14px;
+  margin: 0 0 0 3px;
+}
+
+#garbage-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+
+#garbage-icons .burnable-icon,.nonBurnable-icon,.petBottle-icon,.aluminumGlass-icon{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#info-start {
+  width: 212px;
+  height: 41px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 12px 0 12px 0;
+  background-color: #0271B4;
+  color: #F8F8F8;
+  font-size: 18px;
+}
+
+#comment-box {
+  position: absolute;
+  bottom: 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 62vh;
+}
+
+#comment {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px #747474 solid;
+  width: 100%;
+}
+
+#users-icon {
+  width: 48px;
+  height: 48px;
+  margin: 25px 18px 25px 15px;
+  background-color: #0271B4;
+}
+
+#comment-box-right {
+  position: relative;
+  width: 71%;
+  margin: 0 25px 0 0;
+}
+
+#comment-text {
+  width: 100%;
+  margin: 25px 25px 0 0;
+}
+
+#comment-time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  margin: 0 0 3px 0;
 }

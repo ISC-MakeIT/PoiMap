@@ -19,9 +19,7 @@
         <i class="fas fa-angle-left"></i>
       </div>
       <p id="current-location">現在位置</p>
-      <div id="temporary-button">
-        仮<!--場所詳細ページを表示する仮ボタン-->
-      </div>
+      <div id="temporary-button">仮<!--場所詳細ページを表示する仮ボタン--></div>
     </div>
     <div id="map"></div>
     <div id="filter"></div>
@@ -32,7 +30,7 @@
       </div>
       <div class="category">
         <p class="category-text">燃えないゴミ</p>
-        <div class="notburnable-icon"></div>
+        <div class="nonBurnable-icon"></div>
       </div>
       <div class="category">
         <p class="category-text">ペットボトル</p>
@@ -43,32 +41,35 @@
         <div class="aluminumGlass-icon"></div>
       </div>
       <div class="category" id="filter-close">
-        <p class="category-text">閉じる</p>
-        <div id="cross-icon" background-image:url()>
-
-        </div>
+        <p class="category-text"></p>
+        <div id="cross-icon" background-image:url()></div>
       </div>
     </div>
     <div id="informaion">
       <div id="top-menu">
         <div id="garbage-img"></div>
-        <div id="garbage-whereName">JR横浜駅構内</div>
-        <div id="garbage-close"></div>
-        <div id="prediction-time"></div>
-        <div id="garbage-icons">
-          <div class="burnable-icon"></div>
-          <div class="notburnable-icon"></div>
-          <div class="petBottle-icon"></div>
-          <div class="aluminumGlass-icon"></div>
+        <div id="top-right-div">
+          <div id="garbage-whereName">JR横浜駅構内</div>
+          <div id="garbage-close"></div>
+          <div id="prediction-time">現在位置から徒歩〇分</div>
+          <div id="garbage-icons">
+            <div class="burnable-icon"></div>
+            <div class="nonBurnable-icon"></div>
+            <div class="petBottle-icon"></div>
+            <div class="aluminumGlass-icon"></div>
+          </div>
+          <div id="info-start">案内を開始する</div>
         </div>
-        <div id="info-start"></div>
       </div>
-      <div id="comment">
-        <div id="users-icon"></div>
-        <div id="comment-text"></div>
-        <div id="comment-time"></div>
+      <div id="comment-box">
+        <div id="comment">
+          <div id="users-icon"></div>
+          <div id="comment-box-right">
+            <p id="comment-text">たまにあふれてる時がある。本当にこういうのはなしにしてほしい</p>
+            <p id="comment-time">2019/04/01</p>
+          </div>
+        </div>
       </div>
-      <div id="add-comment"></div>
     </div>
     <script src="PoiMap-map.js"></script>
   </body>
