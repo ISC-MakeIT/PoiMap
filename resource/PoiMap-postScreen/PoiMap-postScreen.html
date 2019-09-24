@@ -8,8 +8,14 @@
     <link href="../reset-stylesheet.css" rel="stylesheet" />
     <link rel="stylesheet" href="PoiMap-postScreen.css" />
   </head>
+
   <body>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form
+      neme="form1"
+      action="../PoiMap-postScreenConfirm/PoiMap-postScreenConfirm.php"
+      method="post"
+      enctype="multipart/form-data"
+    >
       <!--×ボタン-->
       <div id="closeButton"></div>
       <!--写真選択-->
@@ -44,9 +50,10 @@
           >
             <input
               type="checkbox"
-              name="trashBoxType"
+              name="trashBoxType[]"
               id="petBottle"
               class="petBottle-icon category"
+              value="petBottle"
             />
           </label>
           <div id="petBottle-iconBorder"></div>
@@ -58,9 +65,10 @@
           >
             <input
               type="checkbox"
-              name="trashBoxType"
+              name="trashBoxType[]"
               id="nonburnable"
               class="nonburnable-icon category"
+              value="nonburnable"
             />
           </label>
           <div
@@ -76,9 +84,10 @@
           >
             <input
               type="checkbox"
-              name="trashBoxType"
+              name="trashBoxType[]"
               id="burnable"
               class="burnable-icon category"
+              value="burnable"
             />
           </label>
           <div id="burnable-iconBorder"></div>
@@ -90,9 +99,10 @@
           >
             <input
               type="checkbox"
-              name="trashBoxType"
+              name="trashBoxType[]"
               id="aluminumGlass"
               class="aluminumGlass-icon category"
+              value="aluminumGlass"
             />
           </label>
           <div id="aluminumGlass-iconBorder"></div>
@@ -110,8 +120,8 @@
       <!--送信/リセット-->
       <div id="sendForm">
         <p>この内容で投稿しますか？</p>
-        <input type="submit" class="sendButton" id="submitForm" value="はい" />
-        <input type="reset" class="sendButton" id="resetForm" value="いいえ" />
+        <button type="submit" class="sendButton" id="submitForm">はい</button>
+        <button type="reset" class="sendButton" id="resetForm">いいえ</button>
       </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
