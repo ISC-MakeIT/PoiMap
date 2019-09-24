@@ -52,7 +52,6 @@ const changeSVG = (thisId, capitalLetter) => {
       $(`#nonSelect${capitalLetter}Icon`).addClass(
         `select${capitalLetter}Icon`
       );
-      console.log(thisId);
       $(`#${thisId}-iconBorder`).css({
         'background-color': 'white',
         border: '#0272B6 1px solid'
@@ -81,6 +80,26 @@ const changeSVG = (thisId, capitalLetter) => {
   }
 };
 
+/* 戻ったときにチェックされているもののSVGの色を変える */
+onload = function() {
+  $('input:checked').each(function() {
+    const selectValue = $(this).val();
+    if (selectValue == 'petBottle') {
+      const capitalLetter = 'PetBottle';
+      changeSVG(selectValue, capitalLetter);
+    } else if (selectValue == 'burnable') {
+      const capitalLetter = 'Burnable';
+      changeSVG(selectValue, capitalLetter);
+    } else if (selectValue == 'nonburnable') {
+      const capitalLetter = 'NonBurnable';
+      changeSVG(selectValue, capitalLetter);
+    } else if (selectValue == 'aluminumGlass') {
+      const capitalLetter = 'AluminumGlass';
+      changeSVG(selectValue, capitalLetter);
+    }
+  });
+};
+
 /*-------------
   入力チェック
 -------------*/
@@ -105,6 +124,7 @@ $('form').validate({
     placeName: {
       required: '*場所名を記入してください'
     },
+    /* 未選択時に出ないエラーはここかも？　[]にすると別のエラーが出る */
     trashBoxType: {
       required: '*ゴミ箱の種類を選択してください'
     }
