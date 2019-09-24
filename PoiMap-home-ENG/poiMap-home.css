@@ -6,6 +6,10 @@
   text-decoration:none;
   font-family: 'klee','Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
+a:link { color: #f8f8f8; }
+a:visited { color: #f8f8f8; }
+a:active { color: #f8f8f8; opacity: 0.5; }
+
 body{
   display: flex;
   flex-direction: column;
@@ -17,9 +21,6 @@ main{
   height: 100%;
 
 }
-a:link { color: #f8f8f8; }
-a:visited { color: #f8f8f8; }
-a:active { color: #f8f8f8; opacity: 0.5; }
 
 #page-top {
   position: relative;
@@ -66,14 +67,15 @@ z-index: 5;
   display: flex;
   justify-content: space-around;
   width: 100vw;
-  height: 120px;
+  height: 150px;
   margin:0 3px;
     color: #404040;
 }
 
+
 #whereSearch {
   width: 160px;
-  height: 120px;
+  height: 150px;
   background-color: #f8f8f8;
   text-align: center;
 }
@@ -89,7 +91,7 @@ z-index: 5;
 }
 #manual {
   width: 160px;
-  height: 120px;
+  height: 150px;
   background-color:#f8f8f8;
   text-align: center;
 }
@@ -103,7 +105,6 @@ z-index: 5;
   position: relative;
   bottom: -10px;
 }
-
 #search {
   display: flex;
   width: 335px;
