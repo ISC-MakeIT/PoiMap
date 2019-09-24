@@ -5,12 +5,12 @@
   height: 92%;
   background-color: #F8F8F8;
   clip-path: circle(0px at 50% 100%);
-  transition: all 5s ease;
+  transition: all 5000ms ease;
 }
 
 #informaion.open {
   clip-path: circle(10000px at 50% 100%);
-  transition: all 5s ease;
+  transition: all 5000ms ease;
 }
 
 #temporary-button {
@@ -40,7 +40,8 @@
 }
 
 #top-right-div {
-  width: 68%;;
+  position: relative;
+  width: 68%;
 }
 
 #garbage-whereName {
@@ -78,6 +79,15 @@
   font-size: 18px;
 }
 
+#garbage-close {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+  width: 25px;
+  height: 25px;
+  background-color: #0271B4;
+}
+
 .comment-box {
   position: absolute;
   bottom: 0;
@@ -109,6 +119,7 @@
 .comment-text {
   width: 100%;
   margin: 25px 25px 25px 0;
+  font-size: 18px;
 }
 
 .comment-time {
@@ -117,4 +128,15 @@
   right: 0;
   font-size: 12px;
   margin: 0 0 3px 0;
+}
+
+#comment-add-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 13px;
+  width: 44px;
+  height: 44px;
+  border: 1px #0271B4 solid;
+  border-radius: 50%;
+  background-color: #F8F8F8;
 }

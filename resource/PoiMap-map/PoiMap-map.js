@@ -42,3 +42,7 @@ const garbageOpen = document.getElementById('informaion');
 document.getElementById('temporary-button').addEventListener('click', () => {
   garbageOpen.classList.toggle('open');
 })
+
+document.getElementById('garbage-close').addEventListener('click', () => {
+  garbageOpen.classList.toggle('open');
+})
