@@ -112,9 +112,8 @@ $('form').validate({
     placeName: {
       required: true
     },
-    trashBoxType: {
-      required: true,
-      minlength: 1
+    'trashBoxType[]': {
+      required: true
     }
   },
   messages: {
@@ -124,8 +123,7 @@ $('form').validate({
     placeName: {
       required: '*場所名を記入してください'
     },
-    /* 未選択時に出ないエラーはここかも？　[]にすると別のエラーが出る */
-    trashBoxType: {
+    'trashBoxType[]': {
       required: '*ゴミ箱の種類を選択してください'
     }
   },
@@ -136,7 +134,7 @@ $('form').validate({
     if (element.attr('name') == 'placeName') {
       error.appendTo($('#placeNameError'));
     }
-    if (element.attr('name') == 'trashBoxType') {
+    if (element.attr('name') == 'trashBoxType[]') {
       error.appendTo($('#trashBoxTypeError'));
     }
   }
