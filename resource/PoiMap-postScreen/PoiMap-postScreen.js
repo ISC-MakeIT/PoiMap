@@ -1,3 +1,4 @@
+//localStorage.clear();
 /*----------
   写真選択
 ----------*/
@@ -9,6 +10,12 @@ document.getElementById('uploadImage').onchange = function() {
       'background',
       `url(${reader.result}) no-repeat center / cover`
     );
+    if (localStorage.getItem('upImage') === null) {
+      localStorage.setItem('upImage', reader.result);
+    } else {
+      localStorage.clear();
+      localStorage.setItem('upImage', reader.result);
+    }
     //エラーが表示されていたら消す
     if ($('#uploadImageError').text() == '*写真を選択してください') {
       $('#uploadImageError').text('');
@@ -80,8 +87,11 @@ const changeSVG = (thisId, capitalLetter) => {
   }
 };
 
-/* 戻ったときにチェックされているもののSVGの色を変える */
+/*----------------
+  戻ったときの処理
+-----------------*/
 onload = function() {
+  /* 戻ったときにチェックされているもののSVGの色を変える */
   $('input:checked').each(function() {
     const selectValue = $(this).val();
     if (selectValue == 'petBottle') {
@@ -98,6 +108,14 @@ onload = function() {
       changeSVG(selectValue, capitalLetter);
     }
   });
+  /* 戻ったときに写真を表示 */
+  if (!(localStorage.getItem('upImage') === null)) {
+    const returnImage = localStorage.getItem('upImage');
+    $('#preview').css(
+      'background',
+      `url(${returnImage}) no-repeat center / cover`
+    );
+  }
 };
 
 /*-------------
