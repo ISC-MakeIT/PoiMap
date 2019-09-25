@@ -36,7 +36,7 @@
   height: 92vh;
 }
 
-#filter {
+#filter-border {
   position: fixed;
   bottom: 15px;
   right: 10px;
@@ -46,6 +46,17 @@
   margin: 0;
   background-color: #0271B4;
   transition: all 1s ease;
+}
+
+#filter-icon {
+  position: relative;
+  top: 4px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  -webkit-mask: no-repeat center / 70% url(../../icon/filter.svg);
+  background-color: #F8F8F8;
+  border-radius: 50%;
 }
 
 #filter-content {
@@ -59,7 +70,7 @@
   margin: 0;
   text-align: right;
   clip-path: circle(0px at 84.7% 92.5%);
-  /*-webkit-clip-path: circle(10px at 90% 100%);*/
+  -webkit-clip-path: circle(0px at 84.7% 92.5%);
   transition: all 1s ease;
 }
 
@@ -88,13 +99,12 @@
   margin: 0;
 }
 
-  #category-border {
+  .category-border {
   width: 50px;
   height: 50px;
   border: 1px #0271B4 solid;
+  border-radius: 50%;
   background-color: #F8F8F8;
-  color: #0271B4;
-  text-align: center;
 }
 
 .burnable-icon {

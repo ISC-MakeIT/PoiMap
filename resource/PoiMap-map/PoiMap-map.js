@@ -20,7 +20,7 @@ document.getElementById("return").addEventListener("click", () => {
 
 // ↓filter-content open config------------
 
-const filterChange = document.getElementById("filter");
+const filterChange = document.getElementById("filter-icon");
 const filterArea = document.getElementById("filter-content");
 
 filterChange.addEventListener("click", () => {

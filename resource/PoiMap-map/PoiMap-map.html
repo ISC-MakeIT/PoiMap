@@ -22,35 +22,37 @@
       <div id="temporary-button">仮<!--場所詳細ページを表示する仮ボタン--></div>
     </div>
     <div id="map"></div>
-    <div id="filter"></div>
+    <div id="filter-border">
+      <div id="filter-icon"></div>
+    </div>
     <div id="filter-content">
       <div class="category">
         <p class="category-text">燃えるゴミ</p>
-        <div id="category-border">
+        <div class="category-border">
           <div class="burnable-icon"></div>
         </div>
       </div>
       <div class="category">
         <p class="category-text">燃えないゴミ</p>
-        <div id="category-border">
+        <div class="category-border">
           <div class="nonBurnable-icon"></div>
         </div>
       </div>
       <div class="category">
         <p class="category-text">ペットボトル</p>
-        <div id="category-border">
+        <div class="category-border">
           <div class="petBottle-icon"></div>
         </div>
       </div>
       <div class="category">
         <p class="category-text">缶・ビン</p>
-        <div id="category-border">
+        <div class="category-border">
           <div class="aluminumGlass-icon"></div>
         </div>
       </div>
       <div class="category" id="filter-close">
         <p class="category-text"></p>
-        <div id="category-border">
+        <div class="category-border">
           <div id="cross-icon"></div>
         </div>
       </div>
@@ -59,20 +61,22 @@
       <div id="top-menu">
         <div id="garbage-img"></div>
         <div id="top-right-div">
-          <div id="garbage-whereName">JR横浜駅構内だと思っていたんだけど、どうやら違うみたい。じゃあここどこだろう。みんなで探そう！</div>
+          <div id="garbage-whereName">
+            JR横浜駅構内だと思っていたんだけど、どうやら違うみたい。じゃあここどこだろう。みんなで探そう！
+          </div>
           <div id="garbage-close"></div>
           <div id="prediction-time">現在位置から徒歩〇分</div>
           <div id="garbage-icons">
-            <div id="category-border">
+            <div class="category-border">
               <div class="burnable-icon"></div>
             </div>
-            <div id="category-border">
+            <div class="category-border">
               <div class="nonBurnable-icon"></div>
             </div>
-            <div id="category-border">
+            <div class="category-border">
               <div class="petBottle-icon"></div>
             </div>
-            <div id="category-border">
+            <div class="category-border">
               <div class="aluminumGlass-icon"></div>
             </div>
           </div>
@@ -131,7 +135,9 @@
           </div>
         </div>
       </div>
-      <div id="comment-add-icon"></div>
+      <div id="comment-border">
+        <div id="comment-add-icon"></div>
+      </div>
     </div>
     <script src="PoiMap-map.js"></script>
   </body>
