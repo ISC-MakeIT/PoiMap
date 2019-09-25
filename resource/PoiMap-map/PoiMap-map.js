@@ -18,7 +18,7 @@ document.getElementById("return").addEventListener("click", () => {
   window.location.href = "../PoiMap-home/PoiMap-home.html";
 });*/
 
-// filter-content open config------------
+// ↓filter-content open config------------
 
 const filterChange = document.getElementById("filter");
 const filterArea = document.getElementById("filter-content");
@@ -35,7 +35,7 @@ document.getElementById('filter-close').addEventListener('click', () => {
   }, 500);
 })
 
-// informaion open config -------------
+// ↓informaion open config -------------
 
 const garbageOpen = document.getElementById('informaion');
 

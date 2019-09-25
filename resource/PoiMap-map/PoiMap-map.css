@@ -88,7 +88,7 @@
   margin: 0;
 }
 
-.burnable-icon,.nonBurnable-icon,.petBottle-icon,.aluminumGlass-icon,#cross-icon {
+  #category-border {
   width: 50px;
   height: 50px;
   border: 1px #0271B4 solid;
@@ -98,16 +98,42 @@
 }
 
 .burnable-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+  background-color: #0271B4;
 }
 
 .nonBurnable-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+  -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
+  background-color: #0271B4;
 }
 
 .petBottle-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  -webkit-mask: no-repeat center / 80% url(../../icon/plasticBottle.svg);
+  background-color: #0271B4;
 }
 
 .aluminumGlass-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
+  background-color: #0271B4;
 }
 
 #cross-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
+  background-color: #0271B4;
 }

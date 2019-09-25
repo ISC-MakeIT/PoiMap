@@ -5,12 +5,12 @@
   height: 92%;
   background-color: #F8F8F8;
   clip-path: circle(0px at 50% 100%);
-  transition: all 5000ms ease;
+  transition: all 2000ms ease;
 }
 
 #informaion.open {
   clip-path: circle(10000px at 50% 100%);
-  transition: all 5000ms ease;
+  transition: all 2000ms ease;
 }
 
 #temporary-button {
@@ -45,13 +45,17 @@
 }
 
 #garbage-whereName {
-  font-size: 170%;
-  margin: 13px 0 13px 0;
+  height: 29px;
+  width: 160px;
+  font-size: 24px;
+  margin: 13px 0 0 0;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 #prediction-time {
   font-size: 14px;
-  margin: 0 0 0 3px;
+  margin: 10px 0 0 3px;
 }
 
 #garbage-icons {
@@ -62,9 +66,13 @@
 }
 
 #garbage-icons .burnable-icon,.nonBurnable-icon,.petBottle-icon,.aluminumGlass-icon{
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
+
+#garbage-icons #category-border {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 #info-start {
