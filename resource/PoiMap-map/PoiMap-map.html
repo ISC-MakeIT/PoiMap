@@ -23,38 +23,7 @@
     <div id="filter-border">
       <div id="filter-icon"></div>
     </div>
-    <div id="filter-content">
-      <div class="category">
-        <p class="category-text">燃えるゴミ</p>
-        <div class="category-border">
-          <div class="burnable-icon"></div>
-        </div>
-      </div>
-      <div class="category">
-        <p class="category-text">燃えないゴミ</p>
-        <div class="category-border">
-          <div class="nonBurnable-icon"></div>
-        </div>
-      </div>
-      <div class="category">
-        <p class="category-text">ペットボトル</p>
-        <div class="category-border">
-          <div class="petBottle-icon"></div>
-        </div>
-      </div>
-      <div class="category">
-        <p class="category-text">缶・ビン</p>
-        <div class="category-border">
-          <div class="aluminumGlass-icon"></div>
-        </div>
-      </div>
-      <div class="category" id="filter-close">
-        <p class="category-text"></p>
-        <div class="category-border">
-          <div id="cross-icon"></div>
-        </div>
-      </div>
-    </div>
+    <div id="filter-content"></div>
     <div id="informaion">
       <div id="top-menu">
         <div id="garbage-img"></div>
@@ -64,79 +33,17 @@
           </div>
           <div id="garbage-close"></div>
           <div id="prediction-time">現在位置から徒歩〇分</div>
-          <div id="garbage-icons">
-            <div class="category-border">
-              <div class="burnable-icon"></div>
-            </div>
-            <div class="category-border">
-              <div class="nonBurnable-icon"></div>
-            </div>
-            <div class="category-border">
-              <div class="petBottle-icon"></div>
-            </div>
-            <div class="category-border">
-              <div class="aluminumGlass-icon"></div>
-            </div>
-          </div>
-          <div id="info-start">案内を開始する</div>
-        </div>
-      </div>
-      <div class="comment-box">
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">
-              たまにあふれてる時がある。本当にこういうのはなしにしてほしい
-            </p>
-            <p class="comment-time">2019/04/01</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">
-              いやあ、ほんとマジであり得ない。このごみ箱に、半分以上飲みかけのタピオカジュースが入ってた。そのせいで手がびしょびしょ……ほんと買うのなら飲み切ってほしい
-            </p>
-            <p class="comment-time">2019/04/25</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">
-              瓶・缶・ペット・燃えるゴミとりあえず行けばなんでも捨てれるから横浜ついたらとりあえず捨てに行ってるかな？
-            </p>
-            <p class="comment-time">2019/05/04</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">夜はゴミがあふれてる……</p>
-            <p class="comment-time">2019/05/12</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">
-              この場所にはタカラが眠ってる。これだからゴミあさりはやめられねえ。
-            </p>
-            <p class="comment-time">2019/05/15</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="users-icon"></div>
-          <div class="comment-box-right">
-            <p class="comment-text">うわあ、気持ち悪……</p>
-            <p class="comment-time">2019/05/15</p>
-          </div>
-        </div>
-      </div>
-      <div id="comment-border">
-        <div id="comment-add-icon"></div>
+          <div id="garbage-icons"></div>
+        <div id="info-start">案内を開始する</div>
       </div>
     </div>
-    <script src="PoiMap-map.js"></script>
+        <div id="comment-border">
+          <div id="comment-add-icon"></div>
+        </div>
+    <script src="filter-content.js"></script>
+    <script src="open-animaiton.js"></script>
+    <script src="googlemap.js"></script>
+    <script src="comment.js"></script>
+    <script src="location-info.js"></script>
   </body>
 </html>

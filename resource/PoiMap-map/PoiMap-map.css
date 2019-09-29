@@ -73,12 +73,12 @@
   text-align: right;
   clip-path: circle(0px at 84.7% 92.5%);
   -webkit-clip-path: circle(0px at 84.7% 92.5%);
-  transition: all 1s ease;
+  transition: all .7s ease;
 }
 
 #filter-content.open {
-  clip-path: circle(1000px at 84.7% 92.5%);
-  -webkit-clip-path: circle(1000px at 84.7% 92.5%);
+  clip-path: circle(500px at 84.7% 92.5%);
+  -webkit-clip-path: circle(500px at 84.7% 92.5%);
 }
 
 .category {
@@ -109,6 +109,11 @@
   background-color: #F8F8F8;
 }
 
+  .category-border.off {
+    border: 1px #C5CDD1 solid;
+    background-color: #C5CDD1;
+  }
+
 .burnable-icon,.nonBurnable-icon,.aluminumGlass-icon,.petBottle-icon,#cross-icon {
   position: relative;
   top: -1px;
@@ -116,9 +121,13 @@
   background-color: #0271B4;
 }
 
+.burnable-icon.off,.nonBurnable-icon.off,.petBottle-icon.off,.aluminumGlass-icon.off {
+  background-color: #F8F8F8;
+}
 .burnable-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
 }
+
 
 .nonBurnable-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
@@ -132,6 +141,7 @@
 .aluminumGlass-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
 }
+
 
 #cross-icon {
   -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
