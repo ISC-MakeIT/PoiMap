@@ -16,8 +16,8 @@ class TrashBoxesTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $param = [
-            'lat' => 35.466013,
-            'lng' => 139.622260,
+            'lat' => 35.465843,
+            'lng' => 139.622269,
             'location_name'=> "横浜駅",
             'created_at' => "2019-01-02 17:50:30",
             'updated_at' => "2019-01-02 18:38:31",

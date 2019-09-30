@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\trash_type_box;
 use Illuminate\Database\Eloquent\Model;
 
 class trash_box extends Model
@@ -32,6 +33,22 @@ class trash_box extends Model
         ->join('trash_type_boxes','trash_boxes.id','=','trash_type_boxes.trash_box_id')
         ->get();
         return $items;
+    }
+
+    public function createData($request) {
+        $this->lat = $request->lat;
+        $this->lng = $request->lng;
+        $this->location_name = $request->location_name;
+        $this->image_url = $request->image_url;
+        $this->save();
+
+        $id = $this->id;
+
+        $type = new trash_type_box;
+        $type->types = $request->types;
+        $type->trash_box_id = $id;
+        $type->save();
+        return $id;
     }
 
 
