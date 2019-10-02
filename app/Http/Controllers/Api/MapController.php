@@ -18,10 +18,6 @@ class MapController extends Controller
 
     public function store(Request $request)
     {
-        // $new_id = \DB::table('trash_boxes')->insert(['lat' => $request->lat,'lng' => $request->lng,'location_name' => $request->location_name,'image_url' => $request->image_url]);
-        // \DB::table('trash_type_boxes')->insert(['types' => $request->types,'trash_box_id' => $new_id]);
-
-        // return redirect("api/map/".$new_id);
         $trash_box = new trash_box();
         $id = $trash_box->createData($request);
 
@@ -37,15 +33,8 @@ class MapController extends Controller
 
     public function update(Request $request, $id)
     {
-        $trash_box = trash_box::find($id);
-        $data = trash_type_box::where('trash_box_id',$id)->first();
-        $trash_box->lat = $request->lat;
-        $trash_box->lng = $request->lng;
-        $trash_box->location_name = $request->location_name;
-        $trash_box->image_url = $request->image_url;
-        $data->types = $request->types;
-        $trash_box->save();
-        $data->save();
+        $trash_box = new trash_box();
+        $trash_box->updateData($request,$id);
         return redirect("api/map/".$id);
     }
 

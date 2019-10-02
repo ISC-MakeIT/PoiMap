@@ -35,6 +35,19 @@ class trash_box extends Model
         return $items;
     }
 
+    public function updateData($request,$id) {
+        $trash_box = trash_box::find($id);
+        $data = trash_type_box::where('trash_box_id',$id)->first();
+        $trash_box->lat = $request->lat;
+        $trash_box->lng = $request->lng;
+        $trash_box->location_name = $request->location_name;
+        $trash_box->image_url = $request->image_url;
+        $data->types = $request->types;
+        $trash_box->save();
+        $data->save();
+
+    }
+
     public function createData($request) {
         $this->lat = $request->lat;
         $this->lng = $request->lng;
