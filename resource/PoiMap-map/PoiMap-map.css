@@ -1,0 +1,187 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#topBar {
+  width: 100%;
+  height: 8vh;
+  background-color: #0271b4;
+  margin: 0;
+  text-align: center;
+  font-size: 150%;
+  color: #f8f8f8;
+}
+
+#return {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  -webkit-mask: no-repeat center / 300% url(../../icon/back.svg);
+  width: 22px;
+  height: 40px;
+  font-size: 50px;
+  background-color: #f8f8f8;
+}
+
+#current-location {
+  position: absolute;
+  top: 18px;
+  left: 35vw;
+  margin: auto 0 auto 0;
+  width: 30%;
+}
+
+#map {
+  width: 100%;
+  height: 92vh;
+}
+
+#filter-border {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0;
+  background-color: #0271b4;
+  transition: all 1s ease;
+}
+
+#filter-icon {
+  position: relative;
+  top: 4px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  -webkit-mask: no-repeat center / 70% url(../../icon/filter.svg);
+  background-color: #f8f8f8;
+  border-radius: 50%;
+}
+
+#filter-content {
+  position: fixed;
+  bottom: 15px;
+  right: 0;
+  background-color: #f8f8f8;
+  width: 70vw;
+  height: 60vh;
+  border-radius: 50px 0 0 50px;
+  margin: 0;
+  text-align: right;
+  clip-path: circle(0px at 84.7% 92.5%);
+  -webkit-clip-path: circle(0px at 84.7% 92.5%);
+  transition: all 0.7s ease;
+}
+
+#filter-content.open {
+  clip-path: circle(500px at 84.7% 92.5%);
+  -webkit-clip-path: circle(500px at 84.7% 92.5%);
+}
+
+.category {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: calc(100% / 5);
+  margin: 0;
+}
+
+.category div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.category-text {
+  width: 120px;
+  margin: 0;
+}
+
+.category-border {
+  width: 50px;
+  height: 50px;
+  border: 1px #0271b4 solid;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+}
+
+.category-border.off {
+  border: 1px #c5cdd1 solid;
+  background-color: #c5cdd1;
+}
+
+.burnable-icon,
+.nonBurnable-icon,
+.aluminumGlass-icon,
+.petBottle-icon,
+#cross-icon {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  background-color: #0271b4;
+}
+
+.burnable-icon.off,
+.nonBurnable-icon.off,
+.petBottle-icon.off,
+.aluminumGlass-icon.off {
+  background-color: #f8f8f8;
+}
+
+.burnable-icon {
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+}
+
+.nonBurnable-icon {
+  -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
+  -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
+}
+
+.petBottle-icon {
+  -webkit-mask: no-repeat center / 80% url(../../icon/plasticBottle.svg);
+}
+
+.aluminumGlass-icon {
+  -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
+}
+
+#cross-icon {
+  -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
+}
+
+.selectAddBox {
+  position: absolute;
+  bottom: 0;
+  width: 375px;
+  height: 80px;
+  background-color: white;
+}
+
+#addBoxText {
+  position: relative;
+  top: 10px;
+  left: 20%;
+}
+
+.addBoxButton {
+  background-color: white;
+  width: 105px;
+  height: 32px;
+  border-radius: 5px;
+  position: relative;
+  top: 25px;
+}
+
+#goAddForm {
+  border: solid 1px #0271b4;
+  left: 50px;
+}
+
+#returnMap {
+  border: solid 1px #ea4335;
+  left: 109px;
+}
