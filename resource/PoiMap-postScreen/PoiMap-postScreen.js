@@ -10,11 +10,11 @@ document.getElementById('uploadImage').onchange = function() {
       'background',
       `url(${reader.result}) no-repeat center / cover`
     );
-    if (localStorage.getItem('upImage') === null) {
-      localStorage.setItem('upImage', reader.result);
+    if (sessionStorage.getItem('upImage') === null) {
+      sessionStorage.setItem('upImage', reader.result);
     } else {
-      localStorage.clear();
-      localStorage.setItem('upImage', reader.result);
+      sessionStorage.clear();
+      sessionStorage.setItem('upImage', reader.result);
     }
     //エラーが表示されていたら消す
     if ($('#uploadImageError').text() == '*写真を選択してください') {
@@ -109,8 +109,8 @@ onload = function() {
     }
   });
   /* 戻ったときに写真を表示 */
-  if (!(localStorage.getItem('upImage') === null)) {
-    const returnImage = localStorage.getItem('upImage');
+  if (!(sessionStorage.getItem('upImage') === null)) {
+    const returnImage = sessionStorage.getItem('upImage');
     $('#preview').css(
       'background',
       `url(${returnImage}) no-repeat center / cover`
