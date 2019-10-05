@@ -119,6 +119,12 @@ onload = function() {
       `url(${returnImage}) no-repeat center / cover`
     );
   }
+  if (!(sessionStorage.getItem('lat') === null)) {
+    const lat = this.sessionStorage.getItem('lat');
+    $('#lat').val(lat);
+    const lng = this.sessionStorage.getItem('lng');
+    $('#lng').val(lng);
+  }
 };
 
 /*-------------

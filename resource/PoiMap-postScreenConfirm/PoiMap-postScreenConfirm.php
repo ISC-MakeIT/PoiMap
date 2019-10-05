@@ -13,6 +13,9 @@
       if (isset($_POST['reviews'])) {
           $reviews = $_POST['reviews'];
       }
+      //lat,lng
+      $lat = $_POST['lat'];
+      $lng = $_POST['lng'];
   }
 ?>
 
@@ -100,7 +103,8 @@
         </td>
       </tr>
     </table>
-
+    <input type="hidden" name="lat" value="<?php echo $lat; ?>" />
+    <input type="hidden" name="lng" value="<?php echo $lng; ?>" />
     <p id="messages">この内容で投稿しますか？</p>
     <div id="buttonContainer">
       <button type="submit" class="button" id="submitButton">投稿する</button>

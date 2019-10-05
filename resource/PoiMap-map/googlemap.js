@@ -1,3 +1,4 @@
+/*仮のデータ(ここから)*/
 const presentLocationData = {
   lat: 35.465843,
   lon: 139.622669
@@ -7,10 +8,11 @@ const destinationLocateData = {
   lat: 35.4690564,
   lon: 139.6211406
 };
+/*仮のデータ（ここまで）*/
 
 //現在地を中心に地図を表示する
 const initMap = () => {
-  const directionsService = new google.maps.DirectionsService();
+  //const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   const MyLatLng = new google.maps.LatLng(
     presentLocationData['lat'],
@@ -63,6 +65,8 @@ document.getElementById('return').addEventListener('click', () => {
 });
 
 const getClickLatLng = (lat_lng, map) => {
+  console.log(lat_lng.lat());
+  console.log(lat_lng.lng());
   // マーカーを設置
   const marker = new google.maps.Marker({
     position: lat_lng,
@@ -81,8 +85,17 @@ const getClickLatLng = (lat_lng, map) => {
     $('#returnMap').removeClass('boxButton');
     $('#returnMap').addClass('addBoxButton');
     $('#returnMap').html('いいえ');
+    if (sessionStorage.getItem('lat') === null) {
+      sessionStorage.setItem('lat', lat_lng.lat());
+      sessionStorage.setItem('lng', lat_lng.lng());
+    } else {
+      sessionStorage.removeItem('lat');
+      sessionStorage.removeItem('lng');
+      sessionStorage.setItem('lat', lat_lng.lat());
+      sessionStorage.setItem('lng', lat_lng.lng());
+    }
   }
-  //消去
+  //いいえをクリックしたら消去
   $('#returnMap').click(function() {
     $('#addBox').removeClass('selectAddBox');
     $('#addBox').addClass('addBox');
@@ -95,8 +108,6 @@ const getClickLatLng = (lat_lng, map) => {
     $('#returnMap').html('');
     marker.setMap(null);
   });
-  console.log(lat_lng.lat());
-  console.log(lat_lng.lng());
   $('#goAddForm').click(function() {
     //位置情報保存
     //投稿フォームへ
