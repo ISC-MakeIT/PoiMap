@@ -95,9 +95,10 @@ const getClickLatLng = (lat_lng, map) => {
     $('#returnMap').html('');
     marker.setMap(null);
   });
+  console.log(lat_lng.lat());
+  console.log(lat_lng.lng());
   $('#goAddForm').click(function() {
     //位置情報保存
-    console.log(lat_lng);
     //投稿フォームへ
   });
 };
