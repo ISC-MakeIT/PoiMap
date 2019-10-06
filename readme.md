@@ -319,3 +319,16 @@
 |  name   | 必須  |              値の説明              |
 | :-----: | :---: | :--------------------------------: |
 | _method |  〇   | DELETEメソッドを使用するために追加 |
+
+---
+### フォームに_methodを追加する際
+#### DELETEメソッドの場合
+| 属性 |  値  |
+| :--: | :-: |
+| type | hidden |
+| name | _method |
+| value | DELETE |
+ ```html
+ <input type="hidden" name="_method" value="DELETE">
+```
+ 
