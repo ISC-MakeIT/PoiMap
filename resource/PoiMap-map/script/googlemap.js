@@ -2,36 +2,36 @@
 
 const onMarker = [
   {
-    id: "1",
-    types: "1000",
+    id: '1',
+    types: '1000',
     lat: 35.465786,
     lng: 139.622313,
     name: '横浜駅'
   },
   {
-    id: "2",
-    types: "1010",
+    id: '2',
+    types: '1010',
     lat: 35.471027,
     lng: 139.627114,
     name: '神奈川駅'
   },
   {
-    id: "3",
-    types: "1100",
+    id: '3',
+    types: '1100',
     lat: 35.459559,
     lng: 139.616207,
     name: '平沼橋駅'
   },
   {
-    id: "4",
-    types: "0010",
+    id: '4',
+    types: '0010',
     lat: 35.453406,
     lng: 139.608495,
     name: '西横浜駅'
   },
   {
-    id: "5",
-    types: "0011",
+    id: '5',
+    types: '0011',
     lat: 35.45665,
     lng: 139.619537,
     name: '戸部駅'
@@ -44,7 +44,7 @@ let MyLatLng = new google.maps.LatLng(35.465843, 139.622669);
 const Options = {
   zoom: 15,
   center: MyLatLng,
-  mapTypeId: "roadmap",
+  mapTypeId: 'roadmap',
   mapTypeControl: false,
   fullscreenControl: false,
   streetViewControl: false,
@@ -55,10 +55,15 @@ const Options = {
 
 //↓mapdivにマップを映す
 
-const map = new google.maps.Map(document.getElementById("map"), Options);
+const map = new google.maps.Map(document.getElementById('map'), Options);
 
 //↓種別の配列、ループ内で使用。
-const genre = ["burnable-icon", "nonBurnable-icon", "petBottle-icon", "aluminumGlass-icon"];
+const genre = [
+  'burnable-icon',
+  'nonBurnable-icon',
+  'petBottle-icon',
+  'aluminumGlass-icon'
+];
 
 //↓配列が続くまで座標を表示する
 for (let i = 0; i < onMarker.length; i++) {
@@ -75,74 +80,82 @@ for (let i = 0; i < onMarker.length; i++) {
 
   marker.addListener('click', () => {
     garbageOpen.classList.toggle('open');
+    let id = onMarker[i].id;
+    //let work = garbageOpen.id;
     document.getElementById('garbage-whereName').innerHTML = onMarker[i].name;
     let check = null;
     let val = onMarker[i].types;
     for (let j = 0; j <= 3; j++) {
+      check = val.slice(0, 1);
 
-          check = val.slice(0, 1);
+      val = val.slice(1, 4 - j);
+      console.log(val);
+      console.log(check);
 
-          val = val.slice(1, 4 - j);
-          console.log(val);
-          console.log(check);
+      if (check == '0') {
+        const icon = document.getElementsByClassName(genre[j])[1];
 
-          if (check == "0") {
-            const icon = document.getElementsByClassName(genre[j])[1];
+        icon.classList.add('off');
 
-            icon.classList.add('off');
+        const border = document.getElementsByClassName('category-border')[
+          j + 5
+        ];
+        border.classList.add('off');
+      }
+    }
+      //コメント投稿
+      document
+      .getElementById('comment-add-button')
+      .addEventListener('click', () => {
+        const commentContent = document.getElementById('comment-add-text');
 
-            const border = document.getElementsByClassName('category-border')[j + 5];
-            border.classList.add('off');
+        //garbageOpen.id = i;
+        //文章内容をcommentTextに
+        const commentText = commentContent.value;
 
-      };
+        console.log(commentText);
 
-    };
+        //↓投稿ボタンを押すと投稿画面が消える
+        document
+        .getElementById('comment-add-background')
+        .classList.toggle('open');
+        document.getElementById('comment-add-box').classList.toggle('open');
+
+        //↓投稿日時取得
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+        const date = `${year}/${month}/${day}`;
+        console.log(date);
+
+        //テキストエリア内の文章を空に
+        commentContent.value = '';
+        console.log('id:' + id);
+        id = null;
+      });
   });
 
   document.getElementById('garbage-close').addEventListener('click', () => {
     garbageOpen.classList.toggle('open');
+
+    //garbageOpen.id = work;
+
     setTimeout(() => {
       for (let i = 0; i <= 3; i++) {
         const icon = document.getElementsByClassName(genre[i])[1];
         icon.classList.remove('off');
-        const border = document.getElementsByClassName('category-border')[i + 5];
+        const border = document.getElementsByClassName('category-border')[
+          i + 5
+        ];
         border.classList.remove('off');
       }
     }, 500);
   });
-
-  //コメント投稿
-  document.getElementById('comment-add-button').addEventListener('click', () => {
-    const commentContent = document.getElementById('comment-add-text');
-
-    //文章内容をcommentTextに
-    const commentText = commentContent.value;
-    console.log(commentText);
-
-    //↓投稿ボタンを押すと投稿画面が消える
-    document.getElementById('comment-add-background').classList.toggle('open');
-    document.getElementById('comment-add-box').classList.toggle('open');
-
-    //↓投稿日時取得
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    const date = `${year}/${month}/${day}`;
-    console.log(date);
-
-    //テキストエリア内の文章を空に
-    commentContent.value = '';
-
-    const whereId = onMarker[i].id;
-    console.log('id:'+whereId);
-  })
-};
-
-
+}
 
 //↓戻るボタン---------------
 
-document.getElementById("return").addEventListener("click", () => {
-  window.location.href = "../PoiMap-home/PoiMap-home.html";
+document.getElementById('return').addEventListener('click', () => {
+  window.location.href = '../PoiMap-home/PoiMap-home.html';
 });
