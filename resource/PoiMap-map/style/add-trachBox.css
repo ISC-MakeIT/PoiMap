@@ -1,0 +1,32 @@
+.selectAddBox {
+  position: absolute;
+  bottom: 0;
+  width: 375px;
+  height: 80px;
+  background-color: white;
+}
+
+#addBoxText {
+  position: relative;
+  top: 10px;
+  left: 20%;
+}
+
+.addBoxButton {
+  background-color: white;
+  width: 105px;
+  height: 32px;
+  border-radius: 5px;
+  position: relative;
+  top: 25px;
+}
+
+#goAddForm {
+  border: solid 1px #0271b4;
+  left: 50px;
+}
+
+#returnMap {
+  border: solid 1px #ea4335;
+  left: 109px;
+}

@@ -1,0 +1,44 @@
+#filter-border {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0;
+  background-color: #0271B4;
+  transition: all 1s ease;
+}
+
+
+#filter-icon {
+  position: relative;
+  top: 4px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  -webkit-mask: no-repeat center / 70% url(../../../icon/filter.svg);
+  background-color: #F8F8F8;
+  border-radius: 50%;
+}
+
+#filter-content {
+  position: fixed;
+  bottom: 15px;
+  right: 0;
+  background-color: #F8F8F8;
+  width: 70vw;
+  height: 60vh;
+  border-radius: 50px 0 0 50px;
+  margin: 0;
+  text-align: right;
+  clip-path: circle(0px at 84.7% 92.5%);
+  -webkit-clip-path: circle(0px at 84.7% 92.5%);
+  transition: all .7s ease;
+}
+
+#filter-content.open {
+  clip-path: circle(500px at 84.7% 92.5%);
+  -webkit-clip-path: circle(500px at 84.7% 92.5%);
+}
+
