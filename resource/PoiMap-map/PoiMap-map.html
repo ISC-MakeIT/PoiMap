@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="../reset-stylesheet.css" rel="stylesheet" />
-    <link href="PoiMap-map.css" rel="stylesheet" />
-    <link href="PoiMap-garbageDetail.css" rel="stylesheet" />
+    <link href="style/map.css" rel="stylesheet" />
+    <link href="style/garbageDetail.css" rel="stylesheet" />
+    <link href="style/filter.css" rel="stylesheet" >
+    <link href="style/category-icon.css" rel="stylesheet">
+    <link href="style/comment.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
+    <script src="script/api.js"></script>
     <title>poiMap</title>
   </head>
   <body>
     <div id="topBar">
       <div id="return"></div>
       <p id="current-location">現在位置</p>
-      <div id="temporary-button">仮<!--場所詳細ページを表示する仮ボタン--></div>
     </div>
     <div id="map"></div>
     <div id="filter-border">
@@ -29,7 +32,6 @@
         <div id="garbage-img"></div>
         <div id="top-right-div">
           <div id="garbage-whereName">
-            JR横浜駅構内だと思っていたんだけど、どうやら違うみたい。じゃあここどこだろう。みんなで探そう！
           </div>
           <div id="garbage-close"></div>
           <div id="prediction-time">現在位置から徒歩〇分</div>
@@ -40,10 +42,17 @@
         <div id="comment-border">
           <div id="comment-add-icon"></div>
         </div>
-    <script src="filter-content.js"></script>
-    <script src="open-animaiton.js"></script>
-    <script src="googlemap.js"></script>
-    <script src="comment.js"></script>
-    <script src="location-info.js"></script>
+        <div id="comment-add-background">
+        </div>
+        <div id="comment-add-box">
+        <textarea id="comment-add-text" rows="25" cols="30"></textarea>
+        <button id="comment-add-button" type="button" >投稿する</button>
+        </div>
+        <script src="script/filter-content.js"></script>
+    <script src="script/open-animaiton.js"></script>
+    <script src="script/googlemap.js"></script>
+    <script src="script/comment.js"></script>
+    <script src="script/location-info.js"></script>
+    <script src="script/way-guidance.js"></script>
   </body>
 </html>
