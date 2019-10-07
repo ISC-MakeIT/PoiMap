@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="../reset-stylesheet.css" rel="stylesheet" />
+
     <link href="style/map.css" rel="stylesheet" />
     <link href="style/garbageDetail.css" rel="stylesheet" />
     <link href="style/filter.css" rel="stylesheet" >
@@ -17,12 +18,19 @@
     <script src="API/api.js"></script>
     <title>poiMap</title>
   </head>
-  <body>
-    <div id="topBar">
-      <div id="return"></div>
+
+  <body onload="initMap()">
+    <header id="topBar">
+      <a href="../index/index.html"><div id="return"></div></a>
       <p id="current-location">現在位置</p>
-    </div>
+    </header>
     <div id="map"></div>
+    <div id="addBox" class="addBox">
+      <p id="addBoxText"></p>
+      <button type="button" class="boxButton" id="goAddForm" onclick="location.href='../PoiMap-postScreen/PoiMap-postScreen.html'"></button>
+      <button type="button" class="boxButton" id="returnMap"></button>
+    </div>
+
     <div id="filter-border">
       <div id="filter-icon"></div>
     </div>
@@ -32,6 +40,7 @@
         <div id="garbage-img"></div>
         <div id="top-right-div">
           <div id="garbage-whereName">
+            JR横浜駅構内だと思っていたんだけど、どうやら違うみたい。じゃあここどこだろう。みんなで探そう！
           </div>
           <div id="garbage-close"></div>
           <div id="prediction-time">現在位置から徒歩〇分</div>
@@ -42,6 +51,7 @@
         <div id="comment-border">
           <div id="comment-add-icon"></div>
         </div>
+
         <div id="comment-add-background">
         </div>
         <div id="comment-add-box">
@@ -54,5 +64,8 @@
     <script src="script/comment.js"></script>
     <script src="script/location-info.js"></script>
     <script src="script/way-guidance.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
   </body>
 </html>

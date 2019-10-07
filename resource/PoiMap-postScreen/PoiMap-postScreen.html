@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>投稿画面</title>
+    <link href="../reset-stylesheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="PoiMap-postScreen.css" />
+  </head>
+
+  <body>
+    <form
+      action="../PoiMap-postScreenConfirm/PoiMap-postScreenConfirm.php"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <!--×ボタン-->
+      <div id="closeButton" onclick="history.back()"></div>
+      <!--写真選択-->
+      <label for="uploadImage" id="preview">
+        <input
+          type="file"
+          name="uploadImage"
+          id="uploadImage"
+          accept="image/*"
+          capture="camera"
+        />
+      </label>
+      <p id="uploadImageError"></p>
+      <!--場所の名称-->
+      <input
+        type="text"
+        name="placeName"
+        id="placeName"
+        placeholder="場所の名称"
+      />
+      <p id="placeNameError"></p>
+      <!--ゴミ箱の種類-->
+      <div id="trashBoxType">
+        <p>置いてあるゴミ箱の種類を選択してください</p>
+        <p id="trashBoxTypeError"></p>
+        <div id="trashBoxTypeContainer">
+          <!--petBottle-->
+          <label
+            for="petBottle"
+            id="petBottle-icon"
+            class="categoryContainer nonSelectPetBottle-icon"
+          >
+            <input
+              type="checkbox"
+              name="trashBoxType[]"
+              id="petBottle"
+              class="petBottle-icon category"
+              value="petBottle"
+            />
+          </label>
+          <div id="petBottle-iconBorder"></div>
+          <!--nonburnable-->
+          <label
+            for="nonburnable"
+            id="nonburnable-icon"
+            class="categoryContainer nonSelectNonBurnable-icon"
+          >
+            <input
+              type="checkbox"
+              name="trashBoxType[]"
+              id="nonburnable"
+              class="nonburnable-icon category"
+              value="nonburnable"
+            />
+          </label>
+          <div
+            id="nonSelectNonBurnableIcon"
+            class="nonSelectNonBurnableIcon"
+          ></div>
+          <div id="nonburnable-iconBorder"></div>
+          <!--burnable-->
+          <label
+            for="burnable"
+            id="burnable-icon"
+            class="categoryContainer nonSelectBurnable-icon"
+          >
+            <input
+              type="checkbox"
+              name="trashBoxType[]"
+              id="burnable"
+              class="burnable-icon category"
+              value="burnable"
+            />
+          </label>
+          <div id="burnable-iconBorder"></div>
+          <!--aluminumGlass-->
+          <label
+            for="aluminumGlass"
+            id="aluminumGlass-icon"
+            class="categoryContainer nonSelectAluminumGlass-icon"
+          >
+            <input
+              type="checkbox"
+              name="trashBoxType[]"
+              id="aluminumGlass"
+              class="aluminumGlass-icon category"
+              value="aluminumGlass"
+            />
+          </label>
+          <div id="aluminumGlass-iconBorder"></div>
+        </div>
+      </div>
+      <!--口コミ-->
+      <div id="reviewForm">
+        <p>口コミを記載する場合、記入してください</p>
+        <textarea
+          name="reviews"
+          id="reviews"
+          placeholder="口コミの記入欄"
+        ></textarea>
+      </div>
+      <!--位置情報-->
+      <input type="hidden" id="lat" name="lat" value="" />
+      <input type="hidden" id="lng" name="lng" value="" />
+      <!--送信/リセット-->
+      <div id="sendForm">
+        <p>この内容で投稿しますか？</p>
+        <button type="submit" class="sendButton" id="submitForm">はい</button>
+        <button type="reset" class="sendButton" id="resetForm">
+          いいえ
+        </button>
+      </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="PoiMap-postScreen.js"></script>
+  </body>
+</html>

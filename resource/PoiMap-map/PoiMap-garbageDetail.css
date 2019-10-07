@@ -146,6 +146,7 @@
   border: 1px #0271B4 solid;
   border-radius: 50%;
   background-color: #F8F8F8;
+  z-index: 1;
 }
 
 #comment-add-icon {

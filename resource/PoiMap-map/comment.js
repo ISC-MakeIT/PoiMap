@@ -2,6 +2,7 @@ const info = document.getElementById('informaion');
 
 const comments = [
   { comment: '球にあふれてる時がある。本当にこういうのはなしにしてほしい', created_at: '2019/04/01' },
+
   { comment: 'いやあ、ほんとマジであり得ない。このごみ箱に、半分以上飲みかけのタピオカジュースが入ってた。そのせいで手がびしょびしょ……ほんと買うのなら飲み切ってほしい', created_at: '2019/04/25' },
   { comment: '瓶・缶・ペット・燃えるゴミとりあえず行けばなんでも捨てれるから横浜ついたらとりあえず捨てに行ってるかな？', created_at: '2019/05/04' },
   { comment: '夜はゴミがあふれてる……', created_at: '2019/05/12' },
@@ -11,7 +12,9 @@ const comments = [
   { comment: 'よいゴミ箱です!', created_at: '2019/08/15' },
   { comment: 'ダメなゴミ箱です!', created_at: '2019/08/17' },
   { comment: 'よいゴミ箱です!', created_at: '2019/08/18' },
+
   { comment: 'よいゴミ箱です!', created_at: '2019/08/19' }
+
 ];
 
 const commentBox = document.createElement('div');

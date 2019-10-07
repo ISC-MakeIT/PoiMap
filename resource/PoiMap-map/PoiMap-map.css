@@ -7,11 +7,12 @@
 #topBar {
   width: 100%;
   height: 8vh;
-  background-color: #0271B4;
+
+  background-color: #0271b4;
   margin: 0;
   text-align: center;
   font-size: 150%;
-  color: #F8F8F8;;
+  color: #f8f8f8;
 }
 
 #return {
@@ -22,7 +23,9 @@
   width: 22px;
   height: 40px;
   font-size: 50px;
-  background-color: #F8F8F8;
+
+  background-color: #f8f8f8;
+
 }
 
 #current-location {
@@ -46,7 +49,9 @@
   height: 60px;
   border-radius: 50%;
   margin: 0;
-  background-color: #0271B4;
+
+  background-color: #0271b4;
+
   transition: all 1s ease;
 }
 
@@ -57,7 +62,9 @@
   width: 100%;
   height: 100%;
   -webkit-mask: no-repeat center / 70% url(../../icon/filter.svg);
-  background-color: #F8F8F8;
+
+  background-color: #f8f8f8;
+
   border-radius: 50%;
 }
 
@@ -65,7 +72,9 @@
   position: fixed;
   bottom: 15px;
   right: 0;
-  background-color: #F8F8F8;
+
+  background-color: #f8f8f8;
+
   width: 70vw;
   height: 60vh;
   border-radius: 50px 0 0 50px;
@@ -73,7 +82,9 @@
   text-align: right;
   clip-path: circle(0px at 84.7% 92.5%);
   -webkit-clip-path: circle(0px at 84.7% 92.5%);
+
   transition: all .7s ease;
+
 }
 
 #filter-content.open {
@@ -101,33 +112,42 @@
   margin: 0;
 }
 
-  .category-border {
+
+.category-border {
   width: 50px;
   height: 50px;
-  border: 1px #0271B4 solid;
+  border: 1px #0271b4 solid;
   border-radius: 50%;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
-  .category-border.off {
-    border: 1px #C5CDD1 solid;
-    background-color: #C5CDD1;
-  }
+.category-border.off {
+  border: 1px #c5cdd1 solid;
+  background-color: #c5cdd1;
+}
 
-.burnable-icon,.nonBurnable-icon,.aluminumGlass-icon,.petBottle-icon,#cross-icon {
+.burnable-icon,
+.nonBurnable-icon,
+.aluminumGlass-icon,
+.petBottle-icon,
+#cross-icon {
   position: relative;
   top: -1px;
   left: -1px;
-  background-color: #0271B4;
+  background-color: #0271b4;
 }
 
-.burnable-icon.off,.nonBurnable-icon.off,.petBottle-icon.off,.aluminumGlass-icon.off {
-  background-color: #F8F8F8;
+.burnable-icon.off,
+.nonBurnable-icon.off,
+.petBottle-icon.off,
+.aluminumGlass-icon.off {
+  background-color: #f8f8f8;
 }
+
+
 .burnable-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
 }
-
 
 .nonBurnable-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
@@ -142,7 +162,39 @@
   -webkit-mask: no-repeat center / 80% url(../../icon/aluminumGlass-icon.svg);
 }
 
-
 #cross-icon {
   -webkit-mask: no-repeat center / 45% url(../../icon/cross-icon.svg);
+}
+
+.selectAddBox {
+  position: absolute;
+  bottom: 0;
+  width: 375px;
+  height: 80px;
+  background-color: white;
+}
+
+#addBoxText {
+  position: relative;
+  top: 10px;
+  left: 20%;
+}
+
+.addBoxButton {
+  background-color: white;
+  width: 105px;
+  height: 32px;
+  border-radius: 5px;
+  position: relative;
+  top: 25px;
+}
+
+#goAddForm {
+  border: solid 1px #0271b4;
+  left: 50px;
+}
+
+#returnMap {
+  border: solid 1px #ea4335;
+  left: 109px;
 }
