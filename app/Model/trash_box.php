@@ -10,13 +10,6 @@ class trash_box extends Model
     protected $table ='trash_boxes';
     protected $guarded = array('id');
 
-    public static $rules = array(
-        'lat' =>'required',
-        'lng' =>'required',
-        'location_name'=>'required',
-        'image_url' => 'nullable'
-    );
-
     public function getData() {
         $items = \DB::table('trash_boxes')
         ->select('trash_boxes.*','trash_type_boxes.types')
@@ -45,7 +38,6 @@ class trash_box extends Model
         $data->types = $request->types;
         $trash_box->save();
         $data->save();
-
     }
 
     public function createData($request) {

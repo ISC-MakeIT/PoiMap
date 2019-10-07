@@ -20,7 +20,6 @@ class CommentController extends Controller
         $comment = new comment();
         $comment = $comment->createData($request);
         return $comment;
-
     }
 
     public function show($trash_box_id)

@@ -9,11 +9,6 @@ class comment extends Model
     protected $table ='comments';
     protected $guarded = array('id');
 
-    public static $rules = [
-        'user_name' => 'required',
-        'comment' => 'required',
-    ];
-
     public function createData($request) {
         $comment = new comment;
         $comment->trash_box_id = $request->trash_box_id;
