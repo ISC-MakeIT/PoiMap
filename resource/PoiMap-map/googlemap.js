@@ -1,3 +1,4 @@
+
 /*仮のデータ(ここから)*/
 /*
 const presentLocationData = {
@@ -122,4 +123,5 @@ const getClickLatLng = (lat_lng, map) => {
     //位置情報保存
     //投稿フォームへ
   });
+
 };

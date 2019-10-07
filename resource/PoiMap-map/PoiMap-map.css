@@ -7,6 +7,7 @@
 #topBar {
   width: 100%;
   height: 8vh;
+
   background-color: #0271b4;
   margin: 0;
   text-align: center;
@@ -22,7 +23,9 @@
   width: 22px;
   height: 40px;
   font-size: 50px;
+
   background-color: #f8f8f8;
+
 }
 
 #current-location {
@@ -46,7 +49,9 @@
   height: 60px;
   border-radius: 50%;
   margin: 0;
+
   background-color: #0271b4;
+
   transition: all 1s ease;
 }
 
@@ -57,7 +62,9 @@
   width: 100%;
   height: 100%;
   -webkit-mask: no-repeat center / 70% url(../../icon/filter.svg);
+
   background-color: #f8f8f8;
+
   border-radius: 50%;
 }
 
@@ -65,7 +72,9 @@
   position: fixed;
   bottom: 15px;
   right: 0;
+
   background-color: #f8f8f8;
+
   width: 70vw;
   height: 60vh;
   border-radius: 50px 0 0 50px;
@@ -73,7 +82,9 @@
   text-align: right;
   clip-path: circle(0px at 84.7% 92.5%);
   -webkit-clip-path: circle(0px at 84.7% 92.5%);
-  transition: all 0.7s ease;
+
+  transition: all .7s ease;
+
 }
 
 #filter-content.open {
@@ -100,6 +111,7 @@
   width: 120px;
   margin: 0;
 }
+
 
 .category-border {
   width: 50px;
@@ -131,6 +143,7 @@
 .aluminumGlass-icon.off {
   background-color: #f8f8f8;
 }
+
 
 .burnable-icon {
   -webkit-mask: no-repeat center / 80% url(../../icon/burnableGarbage.svg);
