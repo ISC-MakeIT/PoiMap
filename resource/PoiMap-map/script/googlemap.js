@@ -165,7 +165,7 @@ const genre = [
 //マーカー表示
 const markerDisplay = map => {
   //↓配列が続くまで座標を表示する
-  console.log(map);
+  //console.log(map);
   for (let i = 0; i < onMarker.length; i++) {
     const lat = onMarker[i].lat;
     const lng = onMarker[i].lng;
