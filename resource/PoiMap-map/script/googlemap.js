@@ -38,27 +38,6 @@ const onMarker = [
   }
 ];
 
-/*
-//↓マップの初期位置・設定
-
-let MyLatLng = new google.maps.LatLng(35.465843, 139.622669);
-const Options = {
-  zoom: 15,
-  center: MyLatLng,
-  mapTypeId: 'roadmap',
-  mapTypeControl: false,
-  fullscreenControl: false,
-  streetViewControl: false,
-  zoomControlOptions: {
-    position: google.maps.ControlPosition.LEFT_BOTTOM
-  }
-};
-
-//↓mapdivにマップを映す
-
-const map = new google.maps.Map(document.getElementById('map'), Options);
-*/
-
 const initMap = () => {
   /*現在地の取得*/
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -66,9 +45,17 @@ const initMap = () => {
       position.coords.latitude,
       position.coords.longitude
     );
-    console.log(position.coords.latitude);
+    if (sessionStorage.getItem('presentLocationLat') === null) {
+      sessionStorage.setItem('presentLocationLat', position.coords.latitude);
+      sessionStorage.setItem('presentLocationLng', position.coords.longitude);
+    } else {
+      sessionStorage.removeItem('presentLocationLat');
+      sessionStorage.removeItem('presentLocationLng');
+      sessionStorage.setItem('presentLocationLat', position.coords.latitude);
+      sessionStorage.setItem('presentLocationLng', position.coords.longitude);
+    }
 
-    //const directionsService = new google.maps.DirectionsService();
+    const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
     //  const MyLatLng = new google.maps.LatLng(
     //    presentLocationData['lat'],
@@ -94,27 +81,26 @@ const initMap = () => {
       getClickLatLng(e.latLng, map);
       //let addBox = document.getElementById('addBox');
     });
-    /*
-  //2地点間のルートを表示
-  const request = {
-    //現在地
-    origin: new google.maps.LatLng(
-      presentLocationData['lat'],
-      presentLocationData['lon']
-    ),
-    //目的地
-    destination: new google.maps.LatLng(
-      destinationLocateData['lat'],
-      destinationLocateData['lon']
-    ),
-    travelMode: google.maps.DirectionsTravelMode.WALKING
-  };
-  directionsService.route(request, function(result, status) {
-    if (status == 'OK') {
-      directionsRenderer.setDirections(result);
-    }
-  });
-  */
+    /*道案内*/
+    $('#info-start').click(function() {
+      const presentLocationLat = sessionStorage.getItem('presentLocationLat');
+      const presentLocationLng = sessionStorage.getItem('presentLocationLng');
+      const destinationLat = sessionStorage.getItem('destinationLat');
+      const destinationLng = sessionStorage.getItem('destinationLng');
+      //2地点間のルートを表示
+      const request = {
+        //現在地
+        origin: new google.maps.LatLng(presentLocationLat, presentLocationLng),
+        //目的地
+        destination: new google.maps.LatLng(destinationLat, destinationLng),
+        travelMode: google.maps.DirectionsTravelMode.WALKING
+      };
+      directionsService.route(request, function(result, status) {
+        if (status == 'OK') {
+          directionsRenderer.setDirections(result);
+        }
+      });
+    });
   });
 };
 
@@ -123,8 +109,8 @@ document.getElementById('return').addEventListener('click', () => {
 });
 
 const getClickLatLng = (lat_lng, map) => {
-  console.log(lat_lng.lat());
-  console.log(lat_lng.lng());
+  //console.log(lat_lng.lat());
+  //console.log(lat_lng.lng());
   // マーカーを設置
   const marker = new google.maps.Marker({
     position: lat_lng,
@@ -166,10 +152,6 @@ const getClickLatLng = (lat_lng, map) => {
     $('#returnMap').html('');
     marker.setMap(null);
   });
-  $('#goAddForm').click(function() {
-    //位置情報保存
-    //投稿フォームへ
-  });
 };
 
 //↓種別の配列、ループ内で使用。
@@ -203,12 +185,21 @@ const markerDisplay = map => {
       document.getElementById('garbage-whereName').innerHTML = onMarker[i].name;
       let check = null;
       let val = onMarker[i].types;
+      if (sessionStorage.getItem('destinationLat') === null) {
+        sessionStorage.setItem('destinationLat', onMarker[i].lat);
+        sessionStorage.setItem('destinationLng', onMarker[i].lng);
+      } else {
+        sessionStorage.removeItem('destinationLat');
+        sessionStorage.removeItem('destinationLng');
+        sessionStorage.setItem('destinationLat', onMarker[i].lat);
+        sessionStorage.setItem('destinationLng', onMarker[i].lng);
+      }
       for (let j = 0; j <= 3; j++) {
         check = val.slice(0, 1);
 
         val = val.slice(1, 4 - j);
-        console.log(val);
-        console.log(check);
+        //    console.log(val);
+        //  console.log(check);
 
         if (check == '0') {
           const icon = document.getElementsByClassName(genre[j])[1];
@@ -221,6 +212,7 @@ const markerDisplay = map => {
           border.classList.add('off');
         }
       }
+
       //コメント投稿
       document
         .getElementById('comment-add-button')
@@ -231,7 +223,7 @@ const markerDisplay = map => {
           //文章内容をcommentTextに
           const commentText = commentContent.value;
 
-          console.log(commentText);
+          //console.log(commentText);
 
           //↓投稿ボタンを押すと投稿画面が消える
           document
@@ -245,11 +237,11 @@ const markerDisplay = map => {
           const month = today.getMonth() + 1;
           const day = today.getDate();
           const date = `${year}/${month}/${day}`;
-          console.log(date);
+          //console.log(date);
 
           //テキストエリア内の文章を空に
           commentContent.value = '';
-          console.log('id:' + id);
+          //console.log('id:' + id);
           id = null;
         });
     });
