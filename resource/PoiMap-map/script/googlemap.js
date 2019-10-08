@@ -66,6 +66,9 @@ const genre = [
 ];
 
 //↓配列が続くまで座標を表示する
+
+let flg = 0;
+
 for (let i = 0; i < onMarker.length; i++) {
   const lat = onMarker[i].lat;
   const lng = onMarker[i].lng;
@@ -80,7 +83,6 @@ for (let i = 0; i < onMarker.length; i++) {
 
   marker.addListener('click', () => {
     garbageOpen.classList.toggle('open');
-    let id = onMarker[i].id;
     //let work = garbageOpen.id;
     document.getElementById('garbage-whereName').innerHTML = onMarker[i].name;
     let check = null;
@@ -103,13 +105,14 @@ for (let i = 0; i < onMarker.length; i++) {
         border.classList.add('off');
       }
     }
-      //コメント投稿
-      document
-      .getElementById('comment-add-button')
-      .addEventListener('click', () => {
-        const commentContent = document.getElementById('comment-add-text');
+    //コメント投稿
+    document
+    .getElementById('comment-add-button')
+    .addEventListener('click', () => {
+      const commentContent = document.getElementById('comment-add-text');
 
-        //garbageOpen.id = i;
+      let id = onMarker[i].id;
+
         //文章内容をcommentTextに
         const commentText = commentContent.value;
 
@@ -117,8 +120,8 @@ for (let i = 0; i < onMarker.length; i++) {
 
         //↓投稿ボタンを押すと投稿画面が消える
         document
-        .getElementById('comment-add-background')
-        .classList.toggle('open');
+          .getElementById('comment-add-background')
+          .classList.toggle('open');
         document.getElementById('comment-add-box').classList.toggle('open');
 
         //↓投稿日時取得
@@ -126,19 +129,31 @@ for (let i = 0; i < onMarker.length; i++) {
         const year = today.getFullYear();
         const month = today.getMonth() + 1;
         const day = today.getDate();
-        const date = `${year}/${month}/${day}`;
-        console.log(date);
+        let date = `${year}/${month}/${day}`;
 
         //テキストエリア内の文章を空に
         commentContent.value = '';
-        console.log('id:' + id);
+
+        if (flg == 1) {
+          id = null;
+          date = null;
+        }
+
+        flg = 0;
+
+        if (id != null && date != null) {
+          console.log('text:' + commentText);
+          console.log('date:' + date);
+          console.log('id:' + id);
+        }
         id = null;
+        date = null;
       });
   });
 
   document.getElementById('garbage-close').addEventListener('click', () => {
     garbageOpen.classList.toggle('open');
-
+    flg = 1;
     //garbageOpen.id = work;
 
     setTimeout(() => {
