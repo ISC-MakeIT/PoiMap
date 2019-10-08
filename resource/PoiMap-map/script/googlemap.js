@@ -38,6 +38,8 @@ const onMarker = [
   }
 ];
 
+const garbageOpen = document.getElementById('informaion');
+
 const initMap = () => {
   /*現在地の取得*/
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -81,6 +83,17 @@ const initMap = () => {
       getClickLatLng(e.latLng, map);
       //let addBox = document.getElementById('addBox');
     });
+
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const currentLocation = new google.maps.LatLng(
+      latitude,longitude
+    );
+    const currentLocationMarker = new google.maps.Marker({
+      position: currentLocation,
+      map: map,
+      icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+    });
     /*道案内*/
     $('#info-start').click(function() {
       const presentLocationLat = sessionStorage.getItem('presentLocationLat');
@@ -100,6 +113,7 @@ const initMap = () => {
           directionsRenderer.setDirections(result);
         }
       });
+      garbageOpen.classList.toggle('open');
     });
   });
 };
@@ -114,7 +128,7 @@ const getClickLatLng = (lat_lng, map) => {
   // マーカーを設置
   const marker = new google.maps.Marker({
     position: lat_lng,
-    map: map
+    map: map,
   });
   //
   const hasSelectClass = $('#addBox').hasClass('addBox');
@@ -165,7 +179,7 @@ const genre = [
 //マーカー表示
 const markerDisplay = map => {
   //↓配列が続くまで座標を表示する
-  //console.log(map);
+
   for (let i = 0; i < onMarker.length; i++) {
     const lat = onMarker[i].lat;
     const lng = onMarker[i].lng;
@@ -175,8 +189,6 @@ const markerDisplay = map => {
     });
 
     // ↓詳細ページに代わるときの設定 -------------
-
-    const garbageOpen = document.getElementById('informaion');
 
     marker.addListener('click', () => {
       garbageOpen.classList.toggle('open');
