@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TrashBoxRequest;
 use App\Model\trash_box;
 use App\Http\Controllers\Controller;
 
@@ -15,9 +15,10 @@ class MapController extends Controller
         return $data;
     }
 
-    public function store(Request $request)
+    public function store(TrashBoxRequest $request)
     {
-        $id = $this->createData($request);
+        $trash_box = new trash_box();
+        $id = $trash_box->createData($request);
         return redirect("api/map/".$id);
     }
 
@@ -28,7 +29,7 @@ class MapController extends Controller
         return $data;
     }
 
-    public function update(Request $request, $id)
+    public function update(TrashBoxRequest $request, $id)
     {
         $trash_box = new trash_box();
         $trash_box->updateData($request,$id);
