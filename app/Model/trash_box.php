@@ -9,6 +9,22 @@ class trash_box extends Model
 {
     protected $table ='trash_boxes';
     protected $guarded = array('id');
+    
+    public function createData($request) {
+        $this->lat = $request->lat;
+        $this->lng = $request->lng;
+        $this->location_name = $request->location_name;
+        $this->image_url = $request->image_url;
+        $this->save();
+    
+        $id = $this->id;
+    
+        $type = new trash_type_box;
+        $type->types = $request->types;
+        $type->trash_box_id = $id;
+        $type->save();
+        return $id;
+    }
 
     public function getData() {
         $items = \DB::table('trash_boxes')
@@ -40,28 +56,9 @@ class trash_box extends Model
         $data->save();
     }
 
-    public function createData($request) {
-        $this->lat = $request->lat;
-        $this->lng = $request->lng;
-        $this->location_name = $request->location_name;
-        $this->image_url = $request->image_url;
-        $this->save();
-
-        $id = $this->id;
-
-        $type = new trash_type_box;
-        $type->types = $request->types;
-        $type->trash_box_id = $id;
-        $type->save();
-        return $id;
-    }
 
 
     public function trash_type_box() {
         return $this->hasmany('App\trash_type_box','trash_box_id');
-    }
-
-    public function comments() {
-        return $this->hasMany('App\trash_type_box','trash_box_id');
     }
 }
